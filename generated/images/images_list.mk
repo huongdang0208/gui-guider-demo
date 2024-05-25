@@ -1,0 +1,1 @@
+GEN_CSRCS += _arrow_alpha_21x17.c _arrow_alpha_20x17.c _arrow_alpha_19x17.c _background_alpha_482x272.c _itemperature_alpha_27x21.c _ihumidity_alpha_16x15.c _led_alpha_25x24.c _switch_alpha_25x24.c _timer_alpha_25x24.c _offlight_alpha_39x37.c _onlight_alpha_39x37.c _add_alpha_33x29.c _onlight_alpha_26x29.c _offlight_alpha_28x29.c _iswitch_alpha_26x22.c
