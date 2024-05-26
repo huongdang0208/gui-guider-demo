@@ -1,5 +1,0 @@
-/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/lvgl.dir
-/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/lv_drivers.dir
-/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/gui_demo.dir
-/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/edit_cache.dir
-/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/rebuild_cache.dir

@@ -3,18 +3,17 @@ project(panel)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
+
+message("Cmake from Bui Dinh Hien")
 # set path
-set(PATH_LIB /home/thuhuong/Documents/final-gui/)
-set(PATH_CUSTOM /custom/)
+set(PATH_LIB /home/bhien/lib)
+set(PATH_CUSTOM /home/bhien/GUI-Guider-Projects/Panel/custom/)
 
 
 set(CMAKE_NO_SYSTEM_FROM_IMPORTED ON)
 # Set compiler
-set(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabihf-g++)
-set(CMAKE_C_COMPILER /usr/bin/arm-linux-gnueabihf-gcc)
-
-# set(CMAKE_C_FLAGS "-march=armv7-a -mfpu=neon -mfloat-abi=hard --sysroot=${TARGET}")
-# set(CMAKE_CXX_FLAGS "-march=armv7-a -mfpu=neon -mfloat-abi=hard --sysroot=${TARGET}")
+set(CMAKE_CXX_COMPILER /home/bhien/work/bbb/gcc/bin/arm-linux-gnueabihf-g++)
+set(CMAKE_C_COMPILER /home/bhien/work/bbb/gcc/bin/arm-linux-gnueabihf-gcc)
 
 # Suppress warnings for GCC
 if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 7.1)
@@ -39,13 +38,20 @@ include_directories(
     ${PATH_LIB}/lv_drivers/
 )
 
+
 add_definitions(-DUSE_LOG_FILE)
+
+message(STATUS "HOME:=$ENV{HOME}")
+message(STATUS "CMAKE_BUILD_TYPE:=${CMAKE_BUILD_TYPE}")
+message(STATUS "PLATFORM:=${PLATFORM}")
+
 
 # Set sources
 file(GLOB_RECURSE IMAGE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/images/*.c)
 file(GLOB_RECURSE FONT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/guider_fonts/*.c)
 
 set(SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup_scr_screen.c
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets_init.c
     ${CMAKE_CURRENT_SOURCE_DIR}/gui_guider.c
     ${CMAKE_CURRENT_SOURCE_DIR}/events_init.c
@@ -58,6 +64,12 @@ file(GLOB_RECURSE LIB_SOURCES_DRIVER ${PATH_LIB}/lv_drivers/*.c)
 # Build libraries
 add_library(lvgl STATIC ${LIB_SOURCES})
 add_library(lv_drivers STATIC ${LIB_SOURCES_DRIVER})
+#add_library(lumi STATIC ${SOURCES_LUMI})
 
-add_executable(gui_demo ${PROJECT_SOURCE_DIR}/main.c)
-target_link_libraries(gui_demo lvgl lv_drivers)
+
+# Build executable
+add_executable(panel main.cc ${SOURCES} ${IMAGE_SOURCES} ${FONT_SOURCES})
+
+# Link libraries
+target_link_libraries(panel pthread lvgl lv_drivers)
+#install(TARGETS panel RUNTIME DESTINATION bin)
