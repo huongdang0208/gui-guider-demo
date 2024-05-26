@@ -73,15 +73,15 @@ CMakeFiles/gui_demo.dir/main.c.o: CMakeFiles/gui_demo.dir/flags.make
 CMakeFiles/gui_demo.dir/main.c.o: /home/thuhuong/Documents/final-gui/generated/main.c
 CMakeFiles/gui_demo.dir/main.c.o: CMakeFiles/gui_demo.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/gui_demo.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gui_demo.dir/main.c.o -MF CMakeFiles/gui_demo.dir/main.c.o.d -o CMakeFiles/gui_demo.dir/main.c.o -c /home/thuhuong/Documents/final-gui/generated/main.c
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gui_demo.dir/main.c.o -MF CMakeFiles/gui_demo.dir/main.c.o.d -o CMakeFiles/gui_demo.dir/main.c.o -c /home/thuhuong/Documents/final-gui/generated/main.c
 
 CMakeFiles/gui_demo.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/gui_demo.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thuhuong/Documents/final-gui/generated/main.c > CMakeFiles/gui_demo.dir/main.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thuhuong/Documents/final-gui/generated/main.c > CMakeFiles/gui_demo.dir/main.c.i
 
 CMakeFiles/gui_demo.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/gui_demo.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thuhuong/Documents/final-gui/generated/main.c -o CMakeFiles/gui_demo.dir/main.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thuhuong/Documents/final-gui/generated/main.c -o CMakeFiles/gui_demo.dir/main.c.s
 
 # Object files for target gui_demo
 gui_demo_OBJECTS = \
@@ -92,7 +92,8 @@ gui_demo_EXTERNAL_OBJECTS =
 
 gui_demo: CMakeFiles/gui_demo.dir/main.c.o
 gui_demo: CMakeFiles/gui_demo.dir/build.make
-gui_demo: lib/liblvgl.a
+gui_demo: liblvgl.a
+gui_demo: liblv_drivers.a
 gui_demo: CMakeFiles/gui_demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable gui_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gui_demo.dir/link.txt --verbose=$(VERBOSE)

@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/gui_demo.dir/main.c.o -o gui_demo  lib/liblvgl.a 
+/usr/bin/arm-linux-gnueabihf-gcc CMakeFiles/gui_demo.dir/main.c.o -o gui_demo  liblvgl.a liblv_drivers.a 

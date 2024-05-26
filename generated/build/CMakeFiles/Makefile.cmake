@@ -11,8 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.27.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.27.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.4/CMakeSystem.cmake"
-  "/home/thuhuong/Documents/final-gui/lvgl/CMakeLists.txt"
-  "/home/thuhuong/Documents/final-gui/lvgl/env_support/cmake/custom.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake"
@@ -42,13 +40,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "lvgl/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/lvgl.dir/DependInfo.cmake"
+  "CMakeFiles/lv_drivers.dir/DependInfo.cmake"
   "CMakeFiles/gui_demo.dir/DependInfo.cmake"
-  "lvgl/CMakeFiles/lvgl.dir/DependInfo.cmake"
-  "lvgl/CMakeFiles/lvgl_examples.dir/DependInfo.cmake"
-  "lvgl/CMakeFiles/lvgl_demos.dir/DependInfo.cmake"
   )

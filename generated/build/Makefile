@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thuhuong/Documents/final-gui/generated/build/CMakeFiles /home/thuhuong/Documents/final-gui/generated/build//CMakeFiles/progress.marks
@@ -162,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lvgl
+
+# Build rule for target.
+lvgl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lvgl
+.PHONY : lvgl
+
+# fast build rule for target.
+lvgl/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/build
+.PHONY : lvgl/fast
+
+#=============================================================================
+# Target rules for targets named lv_drivers
+
+# Build rule for target.
+lv_drivers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lv_drivers
+.PHONY : lv_drivers
+
+# fast build rule for target.
+lv_drivers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/build
+.PHONY : lv_drivers/fast
+
+#=============================================================================
 # Target rules for targets named gui_demo
 
 # Build rule for target.
@@ -174,44 +155,5381 @@ gui_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gui_demo.dir/build.make CMakeFiles/gui_demo.dir/build
 .PHONY : gui_demo/fast
 
-#=============================================================================
-# Target rules for targets named lvgl
+home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.o: home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.o
 
-# Build rule for target.
-lvgl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lvgl
-.PHONY : lvgl
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.o
 
-# fast build rule for target.
-lvgl/fast:
-	$(MAKE) $(MAKESILENT) -f lvgl/CMakeFiles/lvgl.dir/build.make lvgl/CMakeFiles/lvgl.dir/build
-.PHONY : lvgl/fast
+home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.i: home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.i
 
-#=============================================================================
-# Target rules for targets named lvgl_examples
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.i
 
-# Build rule for target.
-lvgl_examples: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lvgl_examples
-.PHONY : lvgl_examples
+home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.s: home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.s
 
-# fast build rule for target.
-lvgl_examples/fast:
-	$(MAKE) $(MAKESILENT) -f lvgl/CMakeFiles/lvgl_examples.dir/build.make lvgl/CMakeFiles/lvgl_examples.dir/build
-.PHONY : lvgl_examples/fast
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.c.s
 
-#=============================================================================
-# Target rules for targets named lvgl_demos
+home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.o: home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.o
 
-# Build rule for target.
-lvgl_demos: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lvgl_demos
-.PHONY : lvgl_demos
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.o
 
-# fast build rule for target.
-lvgl_demos/fast:
-	$(MAKE) $(MAKESILENT) -f lvgl/CMakeFiles/lvgl_demos.dir/build.make lvgl/CMakeFiles/lvgl_demos.dir/build
-.PHONY : lvgl_demos/fast
+home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.i: home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.s: home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.o: home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.i: home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.s: home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.o: home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.i: home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.s: home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.o: home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.i: home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.s: home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.o: home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.i: home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.s: home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.o: home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.i: home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.s: home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/drm.o: home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/drm.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/drm.i: home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/drm.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/drm.s: home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/drm.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/drm.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.o: home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.i: home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.s: home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.o: home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.i: home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.s: home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.o: home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.i: home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.s: home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.o: home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.i: home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.s: home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.o: home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.i: home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.s: home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.o: home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.i: home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.s: home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.o: home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.i: home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.s: home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.o: home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.i: home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.s: home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.o: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.i: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.s: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.o: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.i: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.s: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.o: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.i: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.s: home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.o: home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.i: home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.s: home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.o: home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.i: home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.s: home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.o: home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.i: home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.s: home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/win_drv.o: home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win_drv.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/win_drv.i: home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win_drv.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/win_drv.s: home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win_drv.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/win_drv.c.s
+
+home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.o: home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.o
+
+home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.i: home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.i
+
+home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.s: home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lv_drivers.dir/build.make CMakeFiles/lv_drivers.dir/home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.o: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.i: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.s: home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.o: home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.i: home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.s: home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.o: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.i: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.s: home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.o: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.i: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.s: home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.o: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.i: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.s: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.o: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.i: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.s: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.o: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.i: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.s: home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.o: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.i: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.s: home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.c.s
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.o: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.o
+
+# target to build an object file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.o
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.o
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.i: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.i
+
+# target to preprocess a source file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.i
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.i
+
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.s: home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.s
+
+# target to generate assembly for a file
+home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lvgl.dir/build.make CMakeFiles/lvgl.dir/home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.s
+.PHONY : home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -244,15 +5562,682 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... gui_demo"
+	@echo "... lv_drivers"
 	@echo "... lvgl"
-	@echo "... lvgl_demos"
-	@echo "... lvgl_examples"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/GC9A01.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/ILI9341.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/R61581.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/SHARP_MIP.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/SSD1963.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/ST7565.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/UC1610.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/drm.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/drm.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/drm.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/display/fbdev.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/gtkdrv/gtkdrv.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/AD_touch.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/FT5406EE8.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/XPT2046.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/evdev.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/libinput.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/indev/xkb.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_common.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/sdl/sdl_gpu.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/wayland/smm.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/wayland/wayland.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/win32drv/win32drv.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/win_drv.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/win_drv.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/win_drv.s"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.o"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.i"
+	@echo "... home/thuhuong/Documents/final-gui/lv_drivers/x11/x11.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_disp.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_event.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_group.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_indev_scroll.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_class.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_draw.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_pos.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_scroll.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_style_gen.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_obj_tree.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_refr.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/core/lv_theme.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/arm2d/lv_gpu_arm2d.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_arc.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_img.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_label.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_layer.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_line.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_mask.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_rect.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_transform.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_draw_triangle.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_buf.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_cache.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/lv_img_decoder.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_draw_pxp_blend.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/pxp/lv_gpu_nxp_pxp_osa.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_line.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_draw_vglite_rect.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_buf.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/nxp/vglite/lv_vglite_utils.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_draw_label.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/renesas/lv_gpu_d2_ra6m3.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_arc.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_bg.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_composite.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_img.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_label.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_layer.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_line.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_mask.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_polygon.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_rect.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_stack_blur.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_texture_cache.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sdl/lv_draw_sdl_utils.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/stm32_dma2d/lv_gpu_stm32_dma2d.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_arc.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_blend.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_dither.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_gradient.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_img.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_layer.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_letter.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_line.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_polygon.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_rect.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/sw/lv_draw_sw_transform.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/draw/swm341_dma2d/lv_gpu_swm341_dma2d.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/flex/lv_flex.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/layouts/grid/lv_grid.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/code128.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/barcode/lv_barcode.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/bmp/lv_bmp.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/freetype/lv_freetype.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_fatfs.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_posix.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_rawfs.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_stdio.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/fsdrv/lv_fs_win32.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/gifdec.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/gif/lv_gif.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lodepng.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/png/lv_png.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/lv_qrcode.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/qrcode/qrcodegen.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/rlottie/lv_rlottie.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/lv_sjpg.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/libs/sjpg/tjpgd.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/lv_extra.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/fragment/lv_fragment_manager.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/gridnav/lv_gridnav.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/ime/lv_ime_pinyin.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/imgfont/lv_imgfont.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/monkey/lv_monkey.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/msg/lv_msg.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/others/snapshot/lv_snapshot.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/basic/lv_theme_basic.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/default/lv_theme_default.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/themes/mono/lv_theme_mono.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/analogclock/lv_analogclock.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/animimg/lv_animimg.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/calendar/lv_calendar_header_dropdown.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/carousel/lv_carousel.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/chart/lv_chart.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/colorwheel/lv_colorwheel.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/dclock/lv_dclock.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_keyboard.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/keyboard/lv_zh_keyboard.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/led/lv_led.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/list/lv_list.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/menu/lv_menu.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/meter/lv_meter.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/msgbox/lv_msgbox.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/radiobtn/lv_radiobtn.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/span/lv_span.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinbox/lv_spinbox.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/spinner/lv_spinner.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tabview/lv_tabview.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/textprogress/lv_textprogress.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/tileview/lv_tileview.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/video/lv_video.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/extra/widgets/win/lv_win.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_dejavu_16_persian_hebrew.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_fmt_txt.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_loader.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_10.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_12_subpx.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_14.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_16.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_18.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_20.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_22.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_24.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_26.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_28_compressed.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_30.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_32.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_34.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_36.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_38.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_40.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_42.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_44.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_46.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_48.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_montserrat_8.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_simsun_16_cjk.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_16.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/font/lv_font_unscii_8.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_disp.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_indev.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/hal/lv_hal_tick.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_anim_timeline.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_area.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_async.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_bidi.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_color.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_fs.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_gc.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_ll.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_log.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_lru.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_math.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_mem.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_printf.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_style_gen.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_templ.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_timer.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_tlsf.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_txt_ap.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/misc/lv_utils.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_arc.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_bar.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btn.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_btnmatrix.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_canvas.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_checkbox.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_dropdown.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_img.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_label.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_line.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_objx_templ.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_roller.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_slider.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_switch.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_table.s"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.o"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.i"
+	@echo "... home/thuhuong/Documents/final-gui/lvgl/src/widgets/lv_textarea.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
