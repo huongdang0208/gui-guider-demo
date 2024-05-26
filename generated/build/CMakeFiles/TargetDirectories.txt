@@ -1,0 +1,16 @@
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/gui_demo.dir
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/edit_cache.dir
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/rebuild_cache.dir
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/list_install_components.dir
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/install.dir
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/install/local.dir
+/home/thuhuong/Documents/final-gui/generated/build/CMakeFiles/install/strip.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/lvgl.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/lvgl_examples.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/lvgl_demos.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/edit_cache.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/rebuild_cache.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/list_install_components.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/install.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/install/local.dir
+/home/thuhuong/Documents/final-gui/generated/build/lvgl/CMakeFiles/install/strip.dir

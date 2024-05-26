@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/gui_demo.dir/main.c.o -o gui_demo  lib/liblvgl.a 
